@@ -1,34 +1,56 @@
 import { Tabs } from 'expo-router';
+import { Heart, Home, User } from 'lucide-react-native';
 import React from 'react';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
+    <Tabs screenOptions={{ 
+        headerShown: false, 
+        tabBarActiveTintColor: '#4F46E5',
+        tabBarStyle: { paddingBottom: 5, paddingTop: 5 }
+    }}>
+      {/* 1. Home Tab */}
+      <Tabs.Screen 
+        name="home" 
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
+          title: 'Discover',
+          tabBarIcon: ({ color }) => <Home size={24} color={color} />,
+        }} 
       />
-      <Tabs.Screen
-        name="explore"
+
+      {/* 2. Favorites Tab */}
+      <Tabs.Screen 
+        name="favorites" 
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
+          title: 'Favorites',
+          tabBarIcon: ({ color }) => <Heart size={24} color={color} />,
+        }} 
+      />
+
+      {/* 3. Profile Tab (NEW) */}
+      <Tabs.Screen 
+        name="profile" 
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => <User size={24} color={color} />,
+        }} 
+      />
+
+      {/* Hidden Screens (So tab bar stays visible) */}
+      <Tabs.Screen 
+        name="book-list" 
+        options={{
+          href: null, // Hides from tab bar
+          headerShown: false
+        }} 
+      />
+      <Tabs.Screen 
+        name="book-detail" 
+        options={{
+          href: null, // Hides from tab bar
+          headerShown: false,
+          presentation: 'modal' // Optional: Makes it slide up
+        }} 
       />
     </Tabs>
   );

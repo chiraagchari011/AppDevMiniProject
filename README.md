@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+Book Suggestion App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a mobile application built with React Native (Expo) that suggests books based on the user's current mood. It features Google Authentication, Phone Authentication (Simulated), and a Favorites list using Firebase Firestore.
 
-## Get started
+Features
 
-1. Install dependencies
+Mood-Based Suggestions: Select a mood (Happy, Sad, Adventurous, etc.) to get curated book lists.
+Google Books API: Real-time book data fetching.
+Authentication: Login via Email/Password or Phone.
+Favorites System: Save books to your personal library (synced to the cloud).
+Profile Management: View user details and sign out.
 
-   ```bash
-   npm install
-   ```
+Tech Stack
 
-2. Start the app
+Framework: React Native (Expo Router)
+Backend: Firebase (Auth & Firestore)
+API: Google Books API
+Styling: StyleSheet & Lucide Icons
 
-   ```bash
-   npx expo start
-   ```
+Installation & Setup
 
-In the output, you'll find options to open the app in a
+Clone the repository
+git clone [https://github.com/chiraagchari011/AppDevMiniProject.git]
+cd BookSuggestions
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Install dependencies npm install
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Firebase Setup
 
-## Get a fresh project
+Create a Firebase project.
+Enable Authentication (Email/Password and Phone).
+Enable Firestore Database.
+Replace the keys in firebaseConfig.ts with your own credentials.
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Run the App - npx expo start
