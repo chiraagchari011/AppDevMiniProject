@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, getReactNativePersistence, initializeAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Your exact config
 const firebaseConfig = {
   apiKey: "AIzaSyD4Ynt_cVFnLsoMAzEY4tRYT9-TqV1toJM",
   authDomain: "appdevminiproject.firebaseapp.com",
@@ -14,10 +13,8 @@ const firebaseConfig = {
   measurementId: "G-W8LCDCZN3L"
 };
 
-// 1. Initialize App
 const app = initializeApp(firebaseConfig);
 
-// 2. Initialize Auth with Persistence (Fixes the crash)
 let auth;
 try {
   auth = initializeAuth(app, {
@@ -27,7 +24,7 @@ try {
   auth = getAuth(app);
 }
 
-// 3. Initialize Database
 const db = getFirestore(app);
 
 export { auth, db };
+

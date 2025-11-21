@@ -25,3 +25,7 @@ Thumbs.db
 VS Code settings (Optional)
 
 .vscode/
+
+Security
+
+firebaseConfig.ts
